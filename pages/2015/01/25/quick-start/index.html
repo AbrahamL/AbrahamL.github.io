@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>安装Pelican</title>
+        <title>quick start</title>
         <meta charset="utf-8" />
 
 
@@ -50,66 +50,73 @@
 
             <header>
               <h2 class="entry-title">
-                <a href="/pages/2015/01/24/an-zhuang-pelican/" rel="bookmark"
-                   title="Permalink to 安装Pelican">安装Pelican</a></h2>
+                <a href="/pages/2015/01/25/quick-start/" rel="bookmark"
+                   title="Permalink to quick start">quick start</a></h2>
            
             </header>
             <footer class="post-info">
-              <abbr class="published" title="2015-01-24T00:00:00+08:00">
-                Sat 24 January 2015
+              <abbr class="published" title="2015-01-25T00:00:00+08:00">
+                Sun 25 January 2015
               </abbr>
               <address class="vcard author">By 
                 <a class="url fn" href="/author/abraham.html"> Abraham</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
-              <p>Pelican目前最适合在Python2.7.x上运行，不支持之前版本的Python。</p>
-<p>你可以通过多种方式安装Pelican，其中最简单的是通过<a href="http://www.pip-installer.org/">pip</a>安装</p>
-<div class="highlight"><pre>sudo pip install pelican
+              <h1>快速开始</h1>
+<p>我们推荐你通读本文档，下面是为了那些急切的人提供的快速入门教程。</p>
+<h2>安装</h2>
+<p>用你喜欢的终端在Python2.7.x或Python 3.3+上安装Pelican（如果需要可以安装Markdown），命令为：</p>
+<div class="highlight"><pre>sudo pip install pelican markdown
 </pre></div>
 
 
-<p>尽管上面的方法是最简单的，但是我们推荐在安装Pelican之前通过<a href="http://www.virtualenv.org/">virtualenv</a>为其创建一个虚拟环境。在你安装了<a href="http://www.virtualenv.org/">virtualenv</a>之后，在终端中输入下列命令为Pelican创建一个新的虚拟环境：</p>
-<div class="highlight"><pre>virtualenv ~/virtualenvs/pelican
-cd ~/virtualenvs/pelican
-source bin/activate
+<h2>创建项目</h2>
+<p>首先为你的项目选一个名字，在本地创建一个合适的目录，并进入该目录：</p>
+<div class="highlight"><pre>mkdir -p ~/projects/yoursite
+cd ~/projects/yoursite
 </pre></div>
 
 
-<p>在虚拟环境创建并激活后，Pelican就可以通过上面的方法（<code>pip install pelican</code>）安装。或者通过源代码来安装：</p>
-<div class="highlight"><pre>cd path-to-Pelican-source
-Python setup.py install
+<p>通过<code>pelican-quickstart</code>命令创建一个项目框架，该命令会问你几个关于你的网站的问题：</p>
+<div class="highlight"><pre>pelican-quickstart
 </pre></div>
 
 
-<p>如果你安装了Git并且希望安装最新的Pelican而不是稳定版的，执行下列命令：</p>
-<div class="highlight"><pre>pip install -e &quot;git+https://github.com/getpelican/pelican.git#egg=pelican&quot;
+<p>对中括号中有默认值的问题，你可以按回车键接受那些默认值。在关于网站前缀的问题，输入你预想的域名(例如： http://example.com)。</p>
+<h2>创建文章</h2>
+<p>当创建一些内容后，你才可以运行Peliacn。用你喜欢的文本编辑器创建你的第一篇文章，内容如下：</p>
+<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">My</span> <span class="n">First</span> <span class="n">Review</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">24</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">review</span>
+
+<span class="n">Following</span> <span class="k">is</span> <span class="n">a</span> <span class="n">review</span> <span class="n">of</span> <span class="n">my</span> <span class="n">favorite</span> <span class="n">mechanical</span> <span class="n">keyboard</span><span class="o">.</span>
 </pre></div>
 
 
-<p>Pelican安装成功后，你可以运行<code>pelican --help</code>来查看基本的用法选项。要获取更多的细节，可以查看<a href="http://docs.getpelican.com/en/3.5.0/publish.html">Publish</a>部分。</p>
-<h2>可选包</h2>
-<p>如果你希望使用<a href="http://pypi.python.org/pypi/Markdown">Markdown</a>语法编辑文档，你需要安装Markdown库：</p>
-<div class="highlight"><pre>pip install Markdown
+<p>上面给的内容是Markdown格式的，将它保存为<code>～/projects/yoursite/content/keyboard-review.md</code></p>
+<h3>生成你的站点</h3>
+<p>在你的项目文件夹，运行<code>pelican</code>命令来生成你的站点：</p>
+<div class="highlight"><pre>pelican content
 </pre></div>
 
 
-<p>安装 <a href="http://pypi.python.org/pypi/typogrify">Typogrify</a>库后，可以在你的配置文件中激活排版增强。</p>
-<h2>依赖</h2>
-<p>在安装Pelican后，下列包应当已经自动地安装完成了：</p>
-<ul>
-<li><a href="">feedgenerator</a>,用于生成Atom feeds</li>
-<li>[jinja2],用于模板支持</li>
-<li><a href="">pygments</a>,用于语法高亮</li>
-<li>[]</li>
-<li>Blue</li>
-</ul>
+<p>你的网站内容已经在<code>output</code>文件夹内生成了。（你可能会看到一些关于feed的警告，但这在本地开发时是正常的，现在可以忽略它们。）</p>
+<h3>预览你的网站</h3>
+<p>新打开一个终端，进入<code>output</code>文件夹后输入下列命令来运行内建的web服务器：</p>
+<div class="highlight"><pre>cd ~/projects/yoursite/output
+python -m SimpleHTTPServer
+</pre></div>
+
+
+<p>用你的浏览器访问<code>http://localhost:8000/</code>来预览你的网站。</p>
+<p>继续阅读剩余的文档来获取更多的细节，并且查看Pelican wiki's Tutorials 页面来获取社区出版的教程。</p>
             </div><!-- /.entry-content -->
             <div class="comments">
               <h3>Comments</h3>
               <div id="disqus_thread"></div>
               <script type="text/javascript">
-                var disqus_identifier = "pages/2015/01/24/an-zhuang-pelican/";
+                var disqus_identifier = "pages/2015/01/25/quick-start/";
                 (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                 dsq.src = 'http://abrahamblog.disqus.com/embed.js';
