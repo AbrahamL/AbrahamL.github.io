@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>安装Pelican</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">abraham's blog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+                <li><a href="/pages/pelican.html">Pelican</a></li>
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/pages/2015/01/24/an-zhuang-pelican/" rel="bookmark"
+                   title="Permalink to 安装Pelican">安装Pelican</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-01-24T00:00:00+08:00">
+                Sat 24 January 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/abraham.html"> Abraham</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>Pelican目前最适合在Python2.7.x上运行，不支持之前版本的Python。</p>
+<p>你可以通过多种方式安装Pelican，其中最简单的是通过<a href="http://www.pip-installer.org/">pip</a>安装</p>
+<div class="highlight"><pre>sudo pip install pelican
+</pre></div>
+
+
+<p>尽管上面的方法是最简单的，但是我们推荐在安装Pelican之前通过<a href="http://www.virtualenv.org/">virtualenv</a>为其创建一个虚拟环境。在你安装了<a href="http://www.virtualenv.org/">virtualenv</a>之后，在终端中输入下列命令为Pelican创建一个新的虚拟环境：</p>
+<div class="highlight"><pre>virtualenv ~/virtualenvs/pelican
+cd ~/virtualenvs/pelican
+source bin/activate
+</pre></div>
+
+
+<p>在虚拟环境创建并激活后，Pelican就可以通过上面的方法（<code>pip install pelican</code>）安装。或者通过源代码来安装：</p>
+<div class="highlight"><pre>cd path-to-Pelican-source
+Python setup.py install
+</pre></div>
+
+
+<p>如果你安装了Git并且希望安装最新的Pelican而不是稳定版的，执行下列命令：</p>
+<div class="highlight"><pre>pip install -e &quot;git+https://github.com/getpelican/pelican.git#egg=pelican&quot;
+</pre></div>
+
+
+<p>Pelican安装成功后，你可以运行<code>pelican --help</code>来查看基本的用法选项。要获取更多的细节，可以查看<a href="http://docs.getpelican.com/en/3.5.0/publish.html">Publish</a>部分。</p>
+<h2>可选包</h2>
+<p>如果你希望使用<a href="http://pypi.python.org/pypi/Markdown">Markdown</a>语法编辑文档，你需要安装Markdown库：</p>
+<div class="highlight"><pre>pip install Markdown
+</pre></div>
+
+
+<p>安装 <a href="http://pypi.python.org/pypi/typogrify">Typogrify</a>库后，可以在你的配置文件中激活排版增强。</p>
+<h2>依赖</h2>
+<p>在安装Pelican后，下列包应当已经自动地安装完成了：</p>
+<ul>
+<li><a href="">feedgenerator</a>,用于生成Atom feeds</li>
+<li>[jinja2],用于模板支持</li>
+<li><a href="">pygments</a>,用于语法高亮</li>
+<li>[]</li>
+<li>Blue</li>
+</ul>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "pages/2015/01/24/an-zhuang-pelican/";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://abrahamblog.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+      <li><a href="/pages/pelican.html">Pelican</a></li>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="/category/pelican.html">Pelican</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-1"><a href="/tag/pelican.html">pelican</a></li>
+</ul>
+
+
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'abrahamblog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>
